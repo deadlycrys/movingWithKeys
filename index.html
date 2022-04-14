@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move the square with the keys</title>
+</head>
+<body>
+
+    <div id="square" style="background-color:red; width:150px; height:150px"></div>
+
+    <script>
+        square.tabIndex = 0
+
+        square.onclick = function() {
+            this.style.left = this.getBoundingClientRect().left + 'px'
+            this.style.top = this.getBoundingClientRect().top + 'px'
+            this.style.position = 'fixed'
+            this.style.border = '2px solid black'
+        }
+
+        square.onkeydown = function(e) {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    this.style.left = parseInt(this.style.left) - this.offsetWidth + 'px'
+                    return false
+            }
+            switch(e.key) {
+                case 'ArrowRight':
+                    this.style.left = parseInt(this.style.left) + this.offsetWidth + 'px'
+                    return false
+            }
+            switch(e.key) {
+                case 'ArrowUp':
+                    this.style.top = parseInt(this.style.top) - this.offsetHeight + 'px'
+                    return false
+            }
+            switch(e.key) {
+                case 'ArrowDown':
+                    this.style.top = parseInt(this.style.top) + this.offsetHeight + 'px'
+                    return false
+            }
+        }
+    </script>
+
+</body>
+</html>
