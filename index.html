@@ -13,13 +13,16 @@
     <script>
         square.tabIndex = 0
 
+        //По клику на квадрат выполняется функция
         square.onclick = function() {
+            //Вычисляем текущую позицию элемента слева и сверху относительно видимого окна и применяем стили
             this.style.left = this.getBoundingClientRect().left + 'px'
             this.style.top = this.getBoundingClientRect().top + 'px'
             this.style.position = 'fixed'
             this.style.border = '2px solid black'
         }
 
+        //При нажатии клавиш, в зависимости от того, какая из клавиш нажата, выполняется передвижение блока в соответствующую сторону и выход из функции
         square.onkeydown = function(e) {
             switch(e.key) {
                 case 'ArrowLeft':
